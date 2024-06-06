@@ -1,0 +1,19 @@
+{
+    "preguntas": [
+      {
+        "id": 1,
+        "texto": "¿Cuál es es cobro del servicio?",
+        "respuesta": "Primero debe llenar el formularo de contacto para informarle."
+      },
+      {
+        "id": 2,
+        "texto": "¿Dónde están ubicados?",
+        "respuesta": "Entre Talca y la Region de Los Lagos"
+      },
+      {
+        "id": 3,
+        "texto": "¿Tienen precios económicos?",
+        "respuesta": "La empresa ofrece crédito directo sin necesidad de pasar por bancos, avales o requisitos complicados. "
+      }
+    ]
+  }

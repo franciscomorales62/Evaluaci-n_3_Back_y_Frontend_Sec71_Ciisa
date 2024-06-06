@@ -1,0 +1,1259 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Evaluación sumativa U3 B Desarrollo Backend",
+    "version": "1.0.0",
+    "description": "API para gestionar contenidos de un sitio web"
+  },
+  "servers": [
+    {
+      "url": "http://localhost/backendFinal/v1"
+    }
+  ],
+  "tags": [
+    {
+      "name": "CategoriaServicio",
+      "description": "Operaciones relacionadas con las categorías de servicios"
+    },
+    {
+      "name": "Equipo",
+      "description": "Operaciones relacionadas con el equipo"
+    },
+    {
+      "name": "EquipoImagen",
+      "description": "Operaciones relacionadas con las imágenes del equipo"
+    },
+    {
+      "name": "Historia",
+      "description": "Operaciones relacionadas con la historia"
+    },
+    {
+      "name": "HistoriaImagen",
+      "description": "Operaciones relacionadas con las imágenes de la historia"
+    },
+    {
+      "name": "Imagen",
+      "description": "Operaciones relacionadas con las imágenes"
+    },
+    {
+      "name": "InfoContacto",
+      "description": "Operaciones relacionadas con la información de contacto"
+    },
+    {
+      "name": "MantenimientoInfo",
+      "description": "Operaciones relacionadas con la información de mantenimiento"
+    },
+    {
+      "name": "PreguntaFrecuente",
+      "description": "Operaciones relacionadas con las preguntas frecuentes"
+    }
+  ],
+  "paths": {
+    "/categoria_servicio": {
+      "get": {
+        "tags": [
+          "CategoriaServicio"
+        ],
+        "summary": "Obtener todas las categorías de servicio",
+        "description": "Devuelve una lista de todas las categorías de servicio.",
+        "responses": {
+          "200": {
+            "description": "Lista de categorías de servicio",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CategoriaServicio"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "CategoriaServicio"
+        ],
+        "summary": "Crear una nueva categoría de servicio",
+        "description": "Crea una nueva categoría de servicio.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoriaServicio"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Creación exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          }
+        }
+      }
+    },
+    "/categoria_servicio/{id}": {
+      "put": {
+        "tags": [
+          "CategoriaServicio"
+        ],
+        "summary": "Actualizar una categoría de servicio por ID",
+        "description": "Actualiza una categoría de servicio por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la categoría de servicio",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoriaServicio"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Actualización exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CategoriaServicio"
+        ],
+        "summary": "Eliminar una categoría de servicio por ID",
+        "description": "Elimina una categoría de servicio por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la categoría de servicio",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Eliminación exitosa"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      }
+    },
+    "/equipo": {
+      "get": {
+        "tags": [
+          "Equipo"
+        ],
+        "summary": "Obtener todos los equipos",
+        "description": "Devuelve una lista de todos los equipos.",
+        "responses": {
+          "200": {
+            "description": "Lista de equipos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Equipo"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Equipo"
+        ],
+        "summary": "Crear un nuevo equipo",
+        "description": "Crea un nuevo equipo.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Equipo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Creación exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          }
+        }
+      }
+    },
+    "/equipo/{id}": {
+      "put": {
+        "tags": [
+          "Equipo"
+        ],
+        "summary": "Actualizar un equipo por ID",
+        "description": "Actualiza un equipo por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID del equipo",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Equipo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Actualización exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Equipo"
+        ],
+        "summary": "Eliminar un equipo por ID",
+        "description": "Elimina un equipo por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID del equipo",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Eliminación exitosa"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      }
+    },
+    "/equipo_imagen": {
+      "get": {
+        "tags": [
+          "EquipoImagen"
+        ],
+        "summary": "Obtener todas las imágenes de equipo",
+        "description": "Devuelve una lista de todas las imágenes de equipo.",
+        "responses": {
+          "200": {
+            "description": "Lista de imágenes de equipo",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EquipoImagen"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "EquipoImagen"
+        ],
+        "summary": "Crear una nueva imagen de equipo",
+        "description": "Crea una nueva imagen de equipo.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EquipoImagen"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Creación exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          }
+        }
+      }
+    },
+    "/equipo_imagen/{id}": {
+      "put": {
+        "tags": [
+          "EquipoImagen"
+        ],
+        "summary": "Actualizar una imagen de equipo por ID",
+        "description": "Actualiza una imagen de equipo por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la imagen de equipo",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EquipoImagen"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Actualización exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "EquipoImagen"
+        ],
+        "summary": "Eliminar una imagen de equipo por ID",
+        "description": "Elimina una imagen de equipo por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la imagen de equipo",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Eliminación exitosa"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      }
+    },
+    "/historia": {
+      "get": {
+        "tags": [
+          "Historia"
+        ],
+        "summary": "Obtener todas las historias",
+        "description": "Devuelve una lista de todas las historias.",
+        "responses": {
+          "200": {
+            "description": "Lista de historias",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Historia"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Historia"
+        ],
+        "summary": "Crear una nueva historia",
+        "description": "Crea una nueva historia.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Historia"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Creación exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          }
+        }
+      }
+    },
+    "/historia/{id}": {
+      "put": {
+        "tags": [
+          "Historia"
+        ],
+        "summary": "Actualizar una historia por ID",
+        "description": "Actualiza una historia por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la historia",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Historia"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Actualización exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Historia"
+        ],
+        "summary": "Eliminar una historia por ID",
+        "description": "Elimina una historia por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la historia",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Eliminación exitosa"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      }
+    },
+    "/historia_imagen": {
+      "get": {
+        "tags": [
+          "HistoriaImagen"
+        ],
+        "summary": "Obtener todas las historias_imagen",
+        "description": "Devuelve una lista de todas las historias_imagen.",
+        "responses": {
+          "200": {
+            "description": "Lista de historias_imagen",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HistoriaImagen"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "HistoriaImagen"
+        ],
+        "summary": "Crear una nueva historia_imagen",
+        "description": "Crea una nueva historia_imagen.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HistoriaImagen"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Creación exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          }
+        }
+      }
+    },
+    "/historia_imagen/{id}": {
+      "put": {
+        "tags": [
+          "HistoriaImagen"
+        ],
+        "summary": "Actualizar una historia_imagen por ID",
+        "description": "Actualiza una historia_imagen por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la historia_imagen",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HistoriaImagen"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Actualización exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "HistoriaImagen"
+        ],
+        "summary": "Eliminar una historia_imagen por ID",
+        "description": "Elimina una historia_imagen por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la historia_imagen",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Eliminación exitosa"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      }
+    },
+    "/imagen": {
+      "get": {
+        "tags": [
+          "Imagen"
+        ],
+        "summary": "Obtener todas las imágenes",
+        "description": "Devuelve una lista de todas las imágenes.",
+        "responses": {
+          "200": {
+            "description": "Lista de imágenes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Imagen"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Imagen"
+        ],
+        "summary": "Crear una nueva imagen",
+        "description": "Crea una nueva imagen.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Imagen"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Creación exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          }
+        }
+      }
+    },
+    "/imagen/{id}": {
+      "put": {
+        "tags": [
+          "Imagen"
+        ],
+        "summary": "Actualizar una imagen por ID",
+        "description": "Actualiza una imagen por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la imagen",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Imagen"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Actualización exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Imagen"
+        ],
+        "summary": "Eliminar una imagen por ID",
+        "description": "Elimina una imagen por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la imagen",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Eliminación exitosa"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      }
+    },
+    "/info_contacto": {
+      "get": {
+        "tags": [
+          "InfoContacto"
+        ],
+        "summary": "Obtener toda la información de contacto",
+        "description": "Devuelve una lista de toda la información de contacto.",
+        "responses": {
+          "200": {
+            "description": "Lista de información de contacto",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InfoContacto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "InfoContacto"
+        ],
+        "summary": "Crear una nueva información de contacto",
+        "description": "Crea una nueva información de contacto.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InfoContacto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Creación exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          }
+        }
+      }
+    },
+    "/info_contacto/{id}": {
+      "put": {
+        "tags": [
+          "InfoContacto"
+        ],
+        "summary": "Actualizar una información de contacto por ID",
+        "description": "Actualiza una información de contacto por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la información de contacto",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InfoContacto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Actualización exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "InfoContacto"
+        ],
+        "summary": "Eliminar una información de contacto por ID",
+        "description": "Elimina una información de contacto por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la información de contacto",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Eliminación exitosa"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      }
+    },
+    "/mantenimiento_info": {
+      "get": {
+        "tags": [
+          "MantenimientoInfo"
+        ],
+        "summary": "Obtener toda la información de mantenimiento",
+        "description": "Devuelve una lista de toda la información de mantenimiento.",
+        "responses": {
+          "200": {
+            "description": "Lista de información de mantenimiento",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MantenimientoInfo"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "MantenimientoInfo"
+        ],
+        "summary": "Crear una nueva información de mantenimiento",
+        "description": "Crea una nueva información de mantenimiento.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MantenimientoInfo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Creación exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          }
+        }
+      }
+    },
+    "/mantenimiento_info/{id}": {
+      "put": {
+        "tags": [
+          "MantenimientoInfo"
+        ],
+        "summary": "Actualizar una información de mantenimiento por ID",
+        "description": "Actualiza una información de mantenimiento por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la información de mantenimiento",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MantenimientoInfo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Actualización exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "MantenimientoInfo"
+        ],
+        "summary": "Eliminar una información de mantenimiento por ID",
+        "description": "Elimina una información de mantenimiento por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la información de mantenimiento",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Eliminación exitosa"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      }
+    },
+    "/pregunta_frecuente": {
+      "get": {
+        "tags": [
+          "PreguntaFrecuente"
+        ],
+        "summary": "Obtener todas las preguntas frecuentes",
+        "description": "Devuelve una lista de todas las preguntas frecuentes.",
+        "responses": {
+          "200": {
+            "description": "Lista de preguntas frecuentes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PreguntaFrecuente"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PreguntaFrecuente"
+        ],
+        "summary": "Crear una nueva pregunta frecuente",
+        "description": "Crea una nueva pregunta frecuente.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PreguntaFrecuente"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Creación exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          }
+        }
+      }
+    },
+    "/pregunta_frecuente/{id}": {
+      "put": {
+        "tags": [
+          "PreguntaFrecuente"
+        ],
+        "summary": "Actualizar una pregunta frecuente por ID",
+        "description": "Actualiza una pregunta frecuente por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la pregunta frecuente",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PreguntaFrecuente"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Actualización exitosa"
+          },
+          "400": {
+            "description": "Solicitud incorrecta"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PreguntaFrecuente"
+        ],
+        "summary": "Eliminar una pregunta frecuente por ID",
+        "description": "Elimina una pregunta frecuente por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la pregunta frecuente",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Eliminación exitosa"
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CategoriaServicio": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "imagen": {
+            "type": "string"
+          },
+          "texto": {
+            "type": "string"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Equipo": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "imagen": {
+            "type": "string"
+          },
+          "texto": {
+            "type": "string"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        }
+      },
+      "EquipoImagen": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "equipo_id": {
+            "type": "integer"
+          },
+          "imagen": {
+            "type": "string"
+          }
+        }
+      },
+      "Historia": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "titulo": {
+            "type": "string"
+          },
+          "texto": {
+            "type": "string"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        }
+      },
+      "HistoriaImagen": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "historia_id": {
+            "type": "integer"
+          },
+          "imagen": {
+            "type": "string"
+          }
+        }
+      },
+      "Imagen": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "url": {
+            "type": "string"
+          },
+          "alt_text": {
+            "type": "string"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        }
+      },
+      "InfoContacto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "telefono": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        }
+      },
+      "MantenimientoInfo": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "fecha_inicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fecha_fin": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PreguntaFrecuente": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "pregunta": {
+            "type": "string"
+          },
+          "respuesta": {
+            "type": "string"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}
